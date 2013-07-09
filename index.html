@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Sample Project</title>
+        <!-- data-main attribute tells require.js to load
+             scripts/main.js after require.js loads. -->
+        <link href='css/style.css' rel='stylesheet' />
+        <link href='scripts/lib/jquery-ui/development-bundle/themes/overcast/jquery-ui.css' rel='stylesheet' /> 
+        <script data-main="scripts/main" src="scripts/lib/require.js"></script>
+    </head>
+    <body>
+        <div id="output">
+        </div>
+        
+        <div id="dialog-container"></div>
+        <!-----
+        * Handlebars Templates
+         ------>
+        <script type="text/x-handlebars-template" id="main">
+            <section id="left-column"></section>
+            <section id="right-column"></section>
+        </script>
+        
+        <script type="text/x-handlebars-template" id="pane">
+            <div class = 'pane-header'>
+            </div>
+            <div class = 'pane-body'>
+            <div>
+        </script>
+        
+        <script type="text/x-handlebars-template" id="pane-header">
+            <h2>{{title}}</h2><button>{{button_text}}</button>
+        </script>
+        
+        <script type="text/x-handlebars-template" id="item">            
+            <div class='item-header'>
+                <h4>{{title}}</h4> <button class='ui-icon ui-icon-folder-collapsed' title='Click to view project details and tasks.'></button>
+            </div>
+            <div class='item-body'>
+                {{description}}
+            </div>  
+        </script>
+        <script type="text/x-handlebars-template" id="project-form">        
+          <form>
+            <div>
+                <label for="name">Title</label>
+                <input type="text" name='title' class ='text ui-widget-content ui-corner-all'/>
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <input type="text" name="description" class='text ui-widget-content ui-corner-all' />
+            </div>
+          </form>        
+    </script>  
+    </body>
+</html>

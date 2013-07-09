@@ -1,0 +1,78 @@
+.item{
+  background: #AAA;
+  padding: 10px;
+}
+
+div.pane{
+  float: left;
+  display:inline-block;
+  width: 40%;
+  background: #BBB;
+  padding: 10px;
+}
+
+
+.new-button{
+  display: inline-block;
+  float: right;
+}
+
+button.ui-icon {
+  height: 20px;
+  width: 20px;
+}
+
+form {
+  
+}
+
+form label {
+  width : 30%;
+  float : left;
+  text-align : right;
+}
+form input {
+  width : 60%;
+  float : right;
+}
+
+#dialog-container {
+  width : 500px;
+}
+
+.pane-header{
+  background: #DDD;
+  padding: 5px;
+
+}
+
+.item-header {
+  background : #EEE;
+  clear: both;
+}
+
+.item-header h4 {
+  display: inline-block;
+  float: left;
+  margin : 0 0 5px 0;
+}
+
+.item-header button.ui-icon{
+  float: right;
+}
+
+.item-body{
+  clear : both;
+}
+
+.float-right{
+  float: right;
+}
+
+.expanded {
+  display: block;
+}
+
+.collapsed {
+  display: none;
+}
