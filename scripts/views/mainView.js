@@ -9,6 +9,9 @@ define(
         rightColumn : '#right-column',
         dialogForm : '#dialog-container'
       },
+      initialize : function(){
+        this.listenTo(App.projects, 'change', this.render);
+      },
       onRender : function(){
         var projects = new paneLayout;     
         
@@ -28,6 +31,27 @@ define(
         projects.body.currentView = body;
         projects.body.show(body);
         console.log('Rendered main view.');
+        
+        //Only display the task pane if there is an active project
+        if (App.projects.currentActiveProject) {
+          var tasks = new paneLayout;     
+          
+          this.rightColumn.show(tasks);
+          
+          var tasksHeader = new projectPaneHeader;
+          tasksHeader.title = 'Tasks for project ' + App.projects.currentActiveProject.get('title');
+          tasksHeader.button_text = 'New Tasks';
+          
+          tasks.header.currentView = tasksHeader;
+          tasks.header.show(tasksHeader);
+          
+          tasksBody = new paneBody({
+            collection : App.projects.currentActiveProject.taskList,  
+          });
+          
+          tasks.body.currentView = tasksBody;
+          tasks.body.show(tasksBody);
+        }
       },
       newProjectForm : function(){
         var form = new projectForm;        
@@ -59,6 +83,7 @@ define(
         }
       }
     });
+    
     projectPaneHeader = paneHeader.extend({
       events : {
         'click button' : 'newProjectForm'
