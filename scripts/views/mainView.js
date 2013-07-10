@@ -47,6 +47,7 @@ define(
         this.addRegion('header', '#' + this.header_id);
         this.addRegion('body', '#' + this.body_id);
       },
+      //provide data to the template
       serializeData : function (){
         return {
           'header_id' : this.header_id,
@@ -157,7 +158,6 @@ define(
         this.addClasses();
         if (this.model.get('active') == false) {
           this.setProjectClosed();
-          console.log('project closed');
         }
       },
       //Open a project and make it active
@@ -185,7 +185,7 @@ define(
         'click button.ui-icon-folder-open' : 'openTask',
         'click button.ui-icon-folder-collapsed' : 'closeTask',
       },
-      //Render a project/task.  If it is the active project leave it open, else close it.
+      //If it is the active project leave it open, else close it.
       onRender : function (){
         this.addClasses();
         if (this.model.get('open') == false) {
@@ -213,9 +213,6 @@ define(
     paneBody = Backbone.Marionette.CollectionView.extend({
       template : '#pane-body',
       el : '.pane-body',
-      onRender : function (){
-        console.log('rendered pane body');
-      },
       initialize : function (){
         //this.listenTo(this.collection, 'all', App.mainView.render);
       }

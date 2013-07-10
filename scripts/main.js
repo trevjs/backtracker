@@ -42,5 +42,4 @@ require(
     
     App.mainView = new mainView;
     App.mainView.render();
-
 });
