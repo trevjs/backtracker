@@ -1,6 +1,6 @@
 define(
   ['jquery', 'underscore', 'backbone'],
-  function(){  
+  function(){
   project = Backbone.Model.extend({
 
     // Default attributes for the project
@@ -13,7 +13,7 @@ define(
         //@todo: created date, category, etc
       };
     },
-        
+    
     initialize: function() {
       if (!this.get("title")) {
         this.set({"title": this.defaults().title});

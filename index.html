@@ -22,9 +22,9 @@
         </script>
         
         <script type="text/x-handlebars-template" id="pane">
-            <div class = 'pane-header'>
+            <div class = 'pane-header' id={{header_id}}>
             </div>
-            <div class = 'pane-body'>
+            <div class = 'pane-body' id={{body_id}}>
             <div>
         </script>
         
@@ -40,7 +40,19 @@
                 {{description}}
             </div>  
         </script>
-        <script type="text/x-handlebars-template" id="project-form">        
+        <script type="text/x-handlebars-template" id="project-form">
+          <form>
+            <div>
+                <label for="name">Title</label>
+                <input type="text" name='title' class ='text ui-widget-content ui-corner-all'/>
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <input type="text" name="description" class='text ui-widget-content ui-corner-all' />
+            </div>
+          </form>        
+        </script>
+        <script type="text/x-handlebars-template" id="task-form"> 
           <form>
             <div>
                 <label for="name">Title</label>

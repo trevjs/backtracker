@@ -3,7 +3,7 @@
   padding: 10px;
 }
 
-div.pane{
+section.pane{
   float: left;
   display:inline-block;
   width: 40%;

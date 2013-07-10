@@ -8,7 +8,7 @@ define(
       return {
         title: "new task",
         description: '',
-        order: app.projects.nextOrder(),
+        order: App.projects.nextOrder(),
         done: false
       };
     },

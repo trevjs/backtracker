@@ -16,12 +16,15 @@ define(
       
       //set a pointer to the active project to make it easier to unset later
       this.currentActiveProject = model;
-   },   
+      
+      this.trigger('projects:new-active');
+   },
    unsetActiveProject : function(){
       if (this.currentActiveProject) {
           this.currentActiveProject.set({'active' : false});
-         this.currentActiveProject = null;         
+         this.currentActiveProject = null;
       }
+      this.trigger('projects:unset-active');
    },
    
    /**
