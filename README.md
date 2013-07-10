@@ -3,7 +3,13 @@ Backtracker - Backbone based tool for managing projects and tasks
 
 About
 -----
-This project is still under development.
+Backtracker is a sample project created by Trevor Schara in order to demonstrate
+JavaScript knowledge.  It uses backbone and backbone.marionette as an MV*
+framework.  It currently allows for the creation of projects, and tasks
+associated with projects, and switching between active projects to view
+the list of tasks for each project.
+
+Backtracker is still under development.
 
 The following resources were instrumental in its develoopment:
 
@@ -18,6 +24,9 @@ will be provided at a later date in order to provide persistance, and support
 for multiple users.
 
 - Basic features
+  - Clean-up and improved modularity
+    - Form utility functions
+    - Increased use of events and commands
   - Editing projects
   - Editing tasks
   - Deleting projects
